@@ -5,7 +5,6 @@ import HomeBackground from "../components/HomeBackground";
 import styles from "../styles/Home.module.css";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStaylinked } from "@fortawesome/free-brands-svg-icons";
 
 export default function Home() {
   return (
