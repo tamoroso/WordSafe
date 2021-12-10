@@ -7,7 +7,7 @@ export default function Generator() {
     <main className={styles.main}>
       <HomeBackground />
       <NavBar />
-      <form className={styles.generator_container}>
+      <form className={`${styles.generator_container} glass`}>
         <label htmlFor="url">url</label>
         <br />
         <input type="text" name="url"></input>

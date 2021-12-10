@@ -20,7 +20,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <HomeBackground />
-        <div className={styles.card}>
+        <div className={`${styles.card} glass`}>
           <Image
             src="/WS_logo.png"
             alt="Word Safe Logo"
@@ -34,7 +34,7 @@ export default function Home() {
           </p>
           <Link href="/generator">
             <a>
-              <button className={styles.button}>
+              <button className={`${styles.button} gradient-btn`}>
                 Let&apos;s start
                 <FontAwesomeIcon className={styles.icon} icon={faArrowRight} />
               </button>

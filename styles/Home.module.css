@@ -21,13 +21,11 @@
   text-align: center;
   color: white;
   text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 30px;
-  min-width: 700px;
-  min-height: 700px;
-  background-color: rgba(91, 116, 138, 0.3);
-  backdrop-filter: blur(50px);
+  min-width: 600px;
+  /* min-height: 600px; */
 }
+
+
 
 .card h1 {
   margin: 1rem 0 2rem 0;
@@ -51,12 +49,10 @@
 }
 
 .button {
-  background: linear-gradient(-90deg, #00a1fa, #00ea99);
   min-width: 200px;
   min-height: 40px;
   padding: 0.5rem 0.2rem;
   border: none;
-  border-radius: 20px;
   color: white;
   font-family: Roboto;
   letter-spacing: 0.2rem;
@@ -67,12 +63,12 @@
 
 .icon {
   margin-left: 1rem;
-  animation: translate 1000ms ease-in-out infinite ;
+  animation: translate 1000ms ease-in-out infinite;
 }
 
 @keyframes translate {
   0% {
-    transform : translateX(0px)
+    transform: translateX(0px);
   }
   50% {
     transform: translateX(10px);

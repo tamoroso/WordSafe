@@ -1,15 +1,13 @@
 .main {
-  height: 100vh;
+  /* height: 100vh; */
   padding: 0;
   flex: 1;
 }
 
 .generator_container {
-  background: gray;
   max-width: 80vw;
   height: 50vh;
   margin: auto;
-  border-radius: 20px;
   padding: 3rem;
   display: grid;
 }

@@ -4,7 +4,7 @@ import styles from "./NavBar.module.css";
 
 export default function NavBar() {
   return (
-    <ul className={styles.container}>
+    <ul className={`${styles.container} glass`}>
       <Image width={80} height={80} src="/WS_logo.png" alt="WordSafe logo" />
       <li>
         <Link href="/">
@@ -18,7 +18,7 @@ export default function NavBar() {
       </li>
       <Link href="/generator" alt="go back">
         <a>
-          <button>Get your password !</button>
+          <button className="gradient-btn">Get your password !</button>
         </a>
       </Link>
     </ul>

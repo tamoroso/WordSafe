@@ -6,8 +6,6 @@
     align-items: center;
     margin: 4rem auto;
     padding : 1rem 10rem 1rem 2rem ;
-    background: gray;
-    border-radius : 30px;
 }
 
 .container li {
@@ -16,12 +14,10 @@
 }
 
 .container button {
-    background: linear-gradient(-90deg, #00a1fa, #00ea99);
     min-width: 200px;
     min-height: 40px;
     padding: 1rem 2rem;
     border: none;
-    border-radius: 30px;
     color: white;
     font-family: Roboto;
     letter-spacing: 0.2rem;
