@@ -3,8 +3,11 @@ import styles from "../styles/generator.module.css";
 import HomeBackground from "../components/HomeBackground";
 import Layout, { siteTitle } from "../components/layout";
 import Head from "next/head";
+import DropDownMenu from "../components/DropDownMenu";
 
 export default function Generator() {
+  
+
   return (
     <div>
       <Layout>
@@ -19,25 +22,29 @@ export default function Generator() {
               <label htmlFor="url">url</label>
             </div>
             <div className={styles.url_input}>
-              <input type="text" name="url"></input>
+              <input
+                type="url"
+                name="url"
+                placeholder="https://yourWebsite.com"
+              ></input>
             </div>
             <div className={styles.cat_label}>
               <label htmlFor="category">category</label>
             </div>
             <div className={styles.cat_input}>
-              <input type="text"></input>
+              <DropDownMenu />
             </div>
             <div className={styles.id_label}>
               <label htmlFor="username">Username</label>
             </div>
             <div className={styles.id_input}>
-              <input type="text"></input>
+              <input type="text" name="username"></input>
             </div>
             <div className={styles.pwd_label}>
               <label htmlFor="password">Password</label>
             </div>
             <div className={styles.pwd_input}>
-              <input type="text"></input>
+              <input type="password" name="password"></input>
             </div>
           </form>
         </main>

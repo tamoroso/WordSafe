@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div>
       <Layout>
         <Head>
           <title>WordSafe - Keep your words safe</title>
