@@ -11,25 +11,34 @@ export default function Generator() {
         <Head>
           <title>{siteTitle}</title>
         </Head>
+        <HomeBackground />
         <main className={styles.main}>
-          <HomeBackground />
           <NavBar />
           <form className={`${styles.generator_container} glass`}>
-            <label htmlFor="url">url</label>
-            <br />
-            <input type="text" name="url"></input>
-            <br />
-            <label htmlFor="category">category</label>
-            <br />
-            <input type="text"></input>
-            <br />
-            <label htmlFor="username">Username</label>
-            <br />
-            <input type="text"></input>
-            <br />
-            <label htmlFor="password">Password</label>
-            <br />
-            <input type="text"></input>
+            <div className={styles.url_label}>
+              <label htmlFor="url">url</label>
+            </div>
+            <div className={styles.url_input}>
+              <input type="text" name="url"></input>
+            </div>
+            <div className={styles.cat_label}>
+              <label htmlFor="category">category</label>
+            </div>
+            <div className={styles.cat_input}>
+              <input type="text"></input>
+            </div>
+            <div className={styles.id_label}>
+              <label htmlFor="username">Username</label>
+            </div>
+            <div className={styles.id_input}>
+              <input type="text"></input>
+            </div>
+            <div className={styles.pwd_label}>
+              <label htmlFor="password">Password</label>
+            </div>
+            <div className={styles.pwd_input}>
+              <input type="text"></input>
+            </div>
           </form>
         </main>
       </Layout>

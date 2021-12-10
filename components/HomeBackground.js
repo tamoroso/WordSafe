@@ -3,7 +3,7 @@ import styles from "./HomeBackground.module.css";
 export default function HomeBackground() {
   return (
     <>
-      <svg className={styles.bg}>
+      <svg className={styles.bg} preserveAspectRatio="xMidYMid meet" viewBox="0 0 900 900">
         <defs>
           <filter id="glow">
             <feGaussianBlur stdDeviation="30" result="coloredBlur" />
@@ -14,22 +14,22 @@ export default function HomeBackground() {
           </filter>
         </defs>
         <circle
-          cx="10vw"
-          cy="10vh"
+          cx="-20%"
+          cy="20%"
           r="400"
           fill="#00A1FA"
           filter="url(#glow)"
         />
         <circle
-          cx="90vw"
-          cy="90vh"
+          cx="130%"
+          cy="100vh"
           r="400"
           fill="#00EA99"
           filter="url(#glow)"
         />
-        <circle cx="70vw" cy="20vh" r="100" fill="#00EA99" />
-        <circle cx="30vw" cy="60vh" r="80" fill="#00EA99" />
-        <circle cx="60vw" cy="50vh" r="50" fill="#00A1FA" />
+        <circle cx="70%" cy="20%" r="100" fill="#00EA99" />
+        <circle cx="30%" cy="60%" r="80" fill="#00EA99" />
+        <circle cx="60%" cy="50%" r="50" fill="#00A1FA" />
       </svg>
     </>
   );

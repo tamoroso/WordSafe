@@ -1,17 +1,88 @@
 .main {
-  /* height: 100vh; */
-  padding: 0;
-  flex: 1;
+  height: 100%;
+  /* padding: 0;
+  flex: 1; */
 }
 
 .generator_container {
   max-width: 80vw;
-  height: 50vh;
+  /* height: 50vh; */
   margin: auto;
   padding: 3rem;
   display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
+}
+
+.generator_container div {
+  padding-top : 2rem;
 }
 
 .generator_container label {
   color: white;
+  text-transform: uppercase;
+  font-family: Now;
+  letter-spacing: 0.4rem;
+}
+
+.generator_container input{
+  border-radius: 10px;
+  height : 50px ; 
+  border : solid 2px rgba(123, 123, 123, 0.5);
+  background : rgba(0, 0, 0, 0.5)
+}
+
+.url_label {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.url_input {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.url_input input{
+  width : 100%;
+}
+
+.cat_label {
+  grid-column: 2;
+  grid-row: 1 / 2;
+}
+
+.cat_input {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.cat_input input{
+  width : 100%;
+}
+
+.id_label {
+  grid-column: 1/3;
+  grid-row: 3/4;
+}
+
+.id_input {
+  grid-column: 1/3;
+  grid-row: 4/5;
+}
+
+.id_input input {
+  width : 100%;
+}
+
+.pwd_label {
+  grid-column: 1/3;
+  grid-row: 5/6;
+}
+
+.pwd_input {
+  grid-column: 1/3;
+}
+
+.pwd_input input{
+  width : 100%;
 }

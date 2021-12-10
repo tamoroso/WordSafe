@@ -1,9 +1,9 @@
 .container {
-  padding: 0 2rem;
+  /* padding: 0 2rem; */
 }
 
 .main {
-  height: 100vh;
+  max-height: 100vh;
   padding: 4rem 0;
   flex: 1;
   display: flex;
@@ -21,7 +21,7 @@
   text-align: center;
   color: white;
   text-decoration: none;
-  min-width: 600px;
+  max-width: 600px;
   /* min-height: 600px; */
 }
 
