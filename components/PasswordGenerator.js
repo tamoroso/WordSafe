@@ -6,49 +6,22 @@ import {
   faEllipsisH,
 } from "@fortawesome/free-solid-svg-icons";
 import styles from "./PasswordGenerator.module.css";
-import { useState } from "react";
+import {
+  passwordVisibility,
+  passwordCopy,
+  generatePassword,
+  alpha,
+  numbers,
+  symbols,
+} from "../lib/password";
 
-export default function PasswordGenerator() {
-  const [length, getLength] = useState(16);
-  const [includeNumbers, SetIncludeNumbers] = useState(true);
-  const [includeSymbols, SetIncludeSymbols] = useState(true);
-  const alpha = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  const numbers = "0123456789";
-  const symbols = "!@#$%^&*_-+=";
-//   const pwdInput = document.getElementById("password");
-
-  const generatePassword = (length, characters) => {
-    let password = "";
-    for (let i = 0; i < length; i++) {
-      password += characters.charAt(
-        Math.floor(Math.random() * characters.length)
-      );
-    }
-    console.log(password);
-    return password;
-  };
-
-  const passwordVisibility = () => {
-    if (password.type === "password") {
-      password.type = "text";
-    } else {
-      password.type = "password";
-    }
-  };
-
-  const passwordCopy = () => {
-    password.select();
-    document.execCommand("copy");
-    alert("Password Copied");
-  };
-
+export default function PasswordGenerator(props) {
   const generatePasswordHandler = () => {
     let characters = alpha;
-    includeNumbers ? (characters += numbers) : "";
-    includeSymbols ? (characters += symbols) : "";
-    password.value = generatePassword(length, characters);
+    props.includeNumbers ? (characters += numbers) : "";
+    props.includeSymbols ? (characters += symbols) : "";
+    props.setPassword(generatePassword(props.length, characters));
   };
-
   return (
     <div className={styles.pwd_wrapper}>
       <input
@@ -56,7 +29,8 @@ export default function PasswordGenerator() {
         name="password"
         id="password"
         placeholder="Generate your password by clicking the cycle icon"
-        value=""
+        value={props.password}
+        readOnly={true}
       />
       <div className={styles.icons}>
         <i onClick={generatePasswordHandler}>
@@ -68,7 +42,7 @@ export default function PasswordGenerator() {
         <i onClick={passwordCopy}>
           <FontAwesomeIcon icon={faCopy} size="lg" />
         </i>
-        <i>
+        <i onClick={props.settingsHandler}>
           <FontAwesomeIcon icon={faEllipsisH} size="lg" />
         </i>
       </div>

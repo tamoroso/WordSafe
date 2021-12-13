@@ -5,8 +5,20 @@ import Layout, { siteTitle } from "../components/layout";
 import Head from "next/head";
 import DropDownMenu from "../components/DropDownMenu";
 import PasswordGenerator from "../components/PasswordGenerator";
+import { useState } from "react";
+import SettingsModal from "../components/SettingsModal";
 
 export default function Generator() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [length, setLength] = useState(16);
+  const [includeNumbers, setIncludeNumbers] = useState(true);
+  const [includeSymbols, setIncludeSymbols] = useState(true);
+  const [password, setPassword] = useState("");
+
+  const settingsHandler = () => {
+    setModalOpen(!modalOpen);
+  };
+
   return (
     <div>
       <Layout>
@@ -15,6 +27,16 @@ export default function Generator() {
         </Head>
         <HomeBackground />
         <main className={styles.main}>
+          <SettingsModal
+            modalOpen={modalOpen}
+            settingsHandler={settingsHandler}
+            length={length}
+            setLength={setLength}
+            includeNumbers={includeNumbers}
+            includeSymbols={includeSymbols}
+            setIncludeNumbers={setIncludeNumbers}
+            setIncludeSymbols={setIncludeSymbols}
+          />
           <NavBar />
           <form className={`${styles.generator_container} glass`}>
             <div className={styles.url_label}>
@@ -47,7 +69,15 @@ export default function Generator() {
               <label htmlFor="password">Password</label>
             </div>
             <div className={styles.pwd_input}>
-              <PasswordGenerator />
+              <PasswordGenerator
+                modalOpen={modalOpen}
+                settingsHandler={settingsHandler}
+                password={password}
+                setPassword={setPassword}
+                length={length}
+                includeNumbers={includeNumbers}
+                includeSymbols={includeSymbols}
+              />
             </div>
             <div className={styles.save_btn}>
               <button className="gradient-btn">Save your password</button>
