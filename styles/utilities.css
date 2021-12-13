@@ -8,4 +8,11 @@
 .gradient-btn {
   background: linear-gradient(-90deg, #00a1fa, #00ea99);
   border-radius: 30px;
+  color: white;
+  font-family: Roboto;
+  letter-spacing: 0.2rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: none;
 }

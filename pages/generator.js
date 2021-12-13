@@ -36,13 +36,20 @@ export default function Generator() {
               <label htmlFor="username">Username</label>
             </div>
             <div className={styles.id_input}>
-              <input type="text" name="username"></input>
+              <input
+                type="text"
+                name="username"
+                placeholder="xX_WordSafe_Master_Xx"
+              ></input>
             </div>
             <div className={styles.pwd_label}>
               <label htmlFor="password">Password</label>
             </div>
             <div className={styles.pwd_input}>
               <input type="password" name="password"></input>
+            </div>
+            <div className={styles.save_btn}>
+              <button className="gradient-btn">Save your password</button>
             </div>
           </form>
         </main>
