@@ -4,6 +4,7 @@ import HomeBackground from "../components/HomeBackground";
 import Layout, { siteTitle } from "../components/layout";
 import Head from "next/head";
 import DropDownMenu from "../components/DropDownMenu";
+import PasswordGenerator from "../components/PasswordGenerator";
 
 export default function Generator() {
   return (
@@ -23,7 +24,7 @@ export default function Generator() {
               <input
                 type="url"
                 name="url"
-                placeholder="https://yourWebsite.com"
+                placeholder="ex : https://yourWebsite.com"
               ></input>
             </div>
             <div className={styles.cat_label}>
@@ -39,14 +40,14 @@ export default function Generator() {
               <input
                 type="text"
                 name="username"
-                placeholder="xX_WordSafe_Master_Xx"
+                placeholder="ex : xX_WordSafe_Master_Xx"
               ></input>
             </div>
             <div className={styles.pwd_label}>
               <label htmlFor="password">Password</label>
             </div>
             <div className={styles.pwd_input}>
-              <input type="password" name="password"></input>
+              <PasswordGenerator />
             </div>
             <div className={styles.save_btn}>
               <button className="gradient-btn">Save your password</button>
