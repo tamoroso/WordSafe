@@ -4,6 +4,13 @@
   width: 100%;
 }
 
+
+.dropdown_input{
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+}
+
 .dropdown_btn {
   display: flex;
   justify-content: space-between;

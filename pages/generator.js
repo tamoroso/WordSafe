@@ -6,8 +6,6 @@ import Head from "next/head";
 import DropDownMenu from "../components/DropDownMenu";
 
 export default function Generator() {
-  
-
   return (
     <div>
       <Layout>

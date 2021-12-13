@@ -17,16 +17,23 @@ export default function DropDownMenu() {
 
   return (
     <div className={styles.dropdown}>
-      <button className={styles.dropdown_btn} onClick={dropDownHandler}>
-        {currentCat}
-        <FontAwesomeIcon
-          className={styles.dropdown_icon}
-          icon={faArrowDown}
-          size="lg"
+      <div>
+        <button className={styles.dropdown_btn} onClick={dropDownHandler}>
+          {currentCat}
+          <FontAwesomeIcon
+            className={styles.dropdown_icon}
+            icon={faArrowDown}
+            size="lg"
+          />
+        </button>
+        <input
+          type="text"
+          value={currentCat}
+          className={styles.dropdown_input}
         />
-      </button>
+      </div>
       {isOpen ? (
-        <ul className={styles.dropdown_content}>
+        <ul className={styles.dropdown_content} list="categories">
           <li onClick={currentCategoryHandler}>E-commerce</li>
           <li onClick={currentCategoryHandler}>Gaming</li>
           <li onClick={currentCategoryHandler}>Social Network</li>
