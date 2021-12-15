@@ -1,7 +1,15 @@
 .container {
   display: flex;
   flex-direction: row;
-  /* max-width: 80vw; */
+  max-width: 80vw;
   justify-content: space-between;
+  margin : 0 auto;
 }
+
+.cards_wrapper{
+  /* overflow-y: scroll; */
+  overflow-x: hidden;
+}
+
+
 
