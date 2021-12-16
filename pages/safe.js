@@ -8,8 +8,6 @@ import CardCarousel from "../components/CardCarousel";
 import { filterObject, getUniqueCat } from "../lib/dataProcessing";
 
 export default function Safe() {
-
-
   const categories = getUniqueCat(passwords);
 
   return (
@@ -23,13 +21,11 @@ export default function Safe() {
           <NavBar />
           <section className={styles.container}>
             {categories.map((cat, i) => (
-              <div key={i}>
-                <div className={styles.cards_wrapper}>
-                  <CardCarousel
-                    header={getUniqueCat(filterObject(passwords, cat))}
-                    data={filterObject(passwords, cat)}
-                  />
-                </div>
+              <div className={styles.stack} key={i}>
+                <CardCarousel
+                  header={getUniqueCat(filterObject(passwords, cat))}
+                  data={filterObject(passwords, cat)}
+                />
               </div>
             ))}
           </section>

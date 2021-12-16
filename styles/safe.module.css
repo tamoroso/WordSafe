@@ -1,14 +1,14 @@
 .container {
   display: flex;
   flex-direction: row;
-  max-width: 80vw;
+  /* min-width: 80vw; */
   justify-content: space-between;
   margin : 0 auto;
+  overflow-x: scroll;
 }
 
-.cards_wrapper{
-  /* overflow-y: scroll;
-  overflow-x: hidden; */
+.stack{
+  margin : 0 2rem;
 }
 
 

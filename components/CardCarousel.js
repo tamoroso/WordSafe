@@ -80,8 +80,20 @@ const CardCarousel = (props) => {
             key={index}
             className={`card ${determineClasses(indexes, index)} glass`}
           >
-            <span>{props.data[key].url}</span>
-            <span>{props.data[key].pwd}</span>
+            <div className={styles.card_body}>
+              <div className={styles.card_url_field}>
+                <strong>url</strong>
+                <span>{props.data[key].url}</span>
+              </div>
+              <div className={styles.card_id_field}>
+                <strong>Username</strong>
+                <span>{props.data[key].id}</span>
+              </div>
+              <div className={styles.card_pwd_field}>
+                <strong>Password</strong>
+                <span>{props.data[key].pwd}</span>
+              </div>
+            </div>
           </li>
         ))}
       </ul>

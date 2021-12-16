@@ -1,8 +1,35 @@
 .category_header {
-    display: flex;
-    color: white;
-    width: 300px;
-    height: 70px;
-    justify-content: center;
-    align-items: center;
-  }
+  display: flex;
+  color: white;
+  min-width: 400px;
+  height: 70px;
+  justify-content: center;
+  align-items: center;
+}
+
+.card_body {
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card_body div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5rem 0;
+}
+
+.card_body div strong {
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  color: white;
+  font-family: Now;
+}
+
+.card_body div span {
+  color: hsla(0, 0%, 100%, 0.5);
+}
