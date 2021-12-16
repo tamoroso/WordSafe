@@ -5,8 +5,9 @@ import Layout, { siteTitle } from "../components/layout";
 import Head from "next/head";
 import DropDownMenu from "../components/DropDownMenu";
 import PasswordGenerator from "../components/PasswordGenerator";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SettingsModal from "../components/SettingsModal";
+import { passwords } from "../data/passwords_data";
 
 export default function Generator() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -14,10 +15,29 @@ export default function Generator() {
   const [includeNumbers, setIncludeNumbers] = useState(true);
   const [includeSymbols, setIncludeSymbols] = useState(true);
   const [password, setPassword] = useState("");
+  const [passwordData, setPasswordData] = useState({
+    savedPwd: { url: "", id: "", cat: "", pwd: "" },
+  });
 
   const settingsHandler = () => {
     setModalOpen(!modalOpen);
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setPasswordData({
+      savedPwd: {
+        url: e.target.url.value,
+        id: e.target.username.value,
+        cat: e.target.category.value,
+        pwd: password,
+      },
+    });
+  };
+
+  useEffect(() => {
+    localStorage.setItem("passwordData", JSON.stringify(passwordData));
+  }, [passwordData]);
 
   return (
     <div>
@@ -38,7 +58,10 @@ export default function Generator() {
             setIncludeSymbols={setIncludeSymbols}
           />
           <NavBar />
-          <form className={`${styles.generator_container} glass`}>
+          <form
+            className={`${styles.generator_container} glass`}
+            onSubmit={handleSubmit}
+          >
             <div className={styles.url_label}>
               <label htmlFor="url">url</label>
             </div>
@@ -80,7 +103,9 @@ export default function Generator() {
               />
             </div>
             <div className={styles.save_btn}>
-              <button className="gradient-btn">Save your password</button>
+              <button className="gradient-btn" type="submit">
+                Save your password
+              </button>
             </div>
           </form>
         </main>

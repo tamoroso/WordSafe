@@ -31,6 +31,7 @@ export default function DropDownMenu() {
           value={currentCat}
           className={styles.dropdown_input}
           readOnly={true}
+          name="category"
         />
       </div>
       {isOpen ? (
