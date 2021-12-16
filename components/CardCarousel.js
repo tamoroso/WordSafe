@@ -1,6 +1,5 @@
-import { useCallback, useEffect, useState } from "react";
-import { useRef } from "react/cjs/react.development";
-import { passwords } from "../data/passwords_data";
+import { useCallback, useEffect, useState, useRef } from "react";
+import styles from "./CardCarousel.module.css";
 import { debounce } from "lodash";
 
 function determineClasses(indexes, cardIndex) {
@@ -14,9 +13,9 @@ function determineClasses(indexes, cardIndex) {
   return "inactive";
 }
 
-const CardCarousel = () => {
+const CardCarousel = (props) => {
   const [indexes, setIndexes] = useState({
-    previousIndex: Object.keys(passwords).length - 1,
+    previousIndex: Object.keys(props.data).length - 1,
     currentIndex: 0,
     nextIndex: 1,
   });
@@ -24,21 +23,19 @@ const CardCarousel = () => {
 
   const handleCardTransition = useCallback(
     (event) => {
-      console.log(event.deltaY);
-      console.log(indexes);
       if (
-        indexes.currentIndex >= Object.keys(passwords).length - 1 &&
+        indexes.currentIndex >= Object.keys(props.data).length - 1 &&
         event.deltaY > 0
       ) {
         setIndexes({
-          previousIndex: Object.keys(passwords).length - 1,
+          previousIndex: Object.keys(props.data).length - 1,
           currentIndex: 0,
           nextIndex: 1,
         });
       } else if (indexes.currentIndex - 1 < 0 && event.deltaY < 0) {
         setIndexes({
-          previousIndex: Object.keys(passwords).length - 2,
-          currentIndex: Object.keys(passwords).length - 1,
+          previousIndex: Object.keys(props.data).length - 2,
+          currentIndex: Object.keys(props.data).length - 1,
           nextIndex: 0,
         });
       } else if (event.deltaY > 0) {
@@ -46,7 +43,7 @@ const CardCarousel = () => {
           previousIndex: prevState.currentIndex,
           currentIndex: prevState.currentIndex + 1,
           nextIndex:
-            prevState.currentIndex + 2 === Object.keys(passwords).length
+            prevState.currentIndex + 2 === Object.keys(props.data).length
               ? 0
               : prevState.currentIndex + 2,
         }));
@@ -54,14 +51,14 @@ const CardCarousel = () => {
         setIndexes((prevState) => ({
           previousIndex:
             prevState.currentIndex - 2 === -1
-              ? Object.keys(passwords).length - 1
+              ? Object.keys(props.data).length - 1
               : prevState.currentIndex - 2,
           currentIndex: prevState.currentIndex - 1,
           nextIndex: prevState.currentIndex,
         }));
       }
     },
-    [indexes]
+    [indexes, props.data]
   );
 
   useEffect(() => {
@@ -76,14 +73,15 @@ const CardCarousel = () => {
 
   return (
     <div>
+      <h1 className={`${styles.category_header} glass`}>{props.header}</h1>
       <ul className="card_carousel" ref={carousel}>
-        {Object.keys(passwords).map((key, index) => (
+        {Object.keys(props.data).map((key, index) => (
           <li
             key={index}
             className={`card ${determineClasses(indexes, index)} glass`}
           >
-            <span>{passwords[key].url}</span>
-            <span>{passwords[key].pwd}</span>
+            <span>{props.data[key].url}</span>
+            <span>{props.data[key].pwd}</span>
           </li>
         ))}
       </ul>
