@@ -6,6 +6,7 @@ import Card from "../components/Card";
 import CategoryHeader from "../components/CategoryHeader";
 import Layout, { siteTitle } from "../components/layout";
 import { passwords } from "../data/passwords_data";
+import CardCarousel from "../components/CardCarousel";
 
 export default function Safe() {
   const getUniqueCat = (passwords) => {
@@ -32,7 +33,8 @@ export default function Safe() {
               <div key={i}>
                 <CategoryHeader cat={cat} />
                 <div className={styles.cards_wrapper}>
-                  {Object.keys(passwords).map((key, i) => {
+                  <CardCarousel />
+                  {/* {Object.keys(passwords).map((key, i) => {
                     if (passwords[key].cat === cat) {
                       return (
                         <Card 
@@ -42,7 +44,7 @@ export default function Safe() {
                         />
                       );
                     }
-                  })}
+                  })} */}
                 </div>
               </div>
             ))}
