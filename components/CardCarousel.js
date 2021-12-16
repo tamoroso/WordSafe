@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { useRef } from "react/cjs/react.development";
 import { passwords } from "../data/passwords_data";
+import { debounce } from "lodash";
 
 function determineClasses(indexes, cardIndex) {
   if (indexes.currentIndex === cardIndex) {
@@ -42,10 +43,11 @@ const CardCarousel = () => {
 
   useEffect(() => {
     const ul = carousel.current;
-    ul.addEventListener("wheel", handleCardTransition);
+    const debouncedCardTransition =  _.debounce(handleCardTransition, 250)
+    ul.addEventListener("wheel", debouncedCardTransition);
 
     return () => {
-      ul.removeEventListener("wheel", handleCardTransition);
+      ul.removeEventListener("wheel", debouncedCardTransition);
     };
   }, [handleCardTransition, indexes]);
 
