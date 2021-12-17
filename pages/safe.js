@@ -3,12 +3,14 @@ import Head from "next/head";
 import HomeBackground from "../components/HomeBackground";
 import styles from "../styles/safe.module.css";
 import Layout, { siteTitle } from "../components/layout";
-import { passwords } from "../data/passwords_data";
 import CardCarousel from "../components/CardCarousel";
 import { filterObject, getUniqueCat } from "../lib/dataProcessing";
+import { useContext, useEffect, useState } from "react";
+import { AppContext } from "../context/AppContext";
 
 export default function Safe() {
-  const categories = getUniqueCat(passwords);
+  const context = useContext(AppContext);
+  const categories = getUniqueCat(context.state.passwords);
 
   return (
     <div>
@@ -23,8 +25,8 @@ export default function Safe() {
             {categories.map((cat, i) => (
               <div className={styles.stack} key={i}>
                 <CardCarousel
-                  header={getUniqueCat(filterObject(passwords, cat))}
-                  data={filterObject(passwords, cat)}
+                  header={getUniqueCat(filterObject(context.state.passwords, cat))}
+                  data={filterObject(context.state.passwords, cat)}
                 />
               </div>
             ))}

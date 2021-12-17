@@ -5,19 +5,17 @@ import Layout, { siteTitle } from "../components/layout";
 import Head from "next/head";
 import DropDownMenu from "../components/DropDownMenu";
 import PasswordGenerator from "../components/PasswordGenerator";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import SettingsModal from "../components/SettingsModal";
-import { passwords } from "../data/passwords_data";
+import { AppContext } from "../context/AppContext";
 
 export default function Generator() {
+  const context = useContext(AppContext);
   const [modalOpen, setModalOpen] = useState(false);
   const [length, setLength] = useState(16);
   const [includeNumbers, setIncludeNumbers] = useState(true);
   const [includeSymbols, setIncludeSymbols] = useState(true);
   const [password, setPassword] = useState("");
-  const [passwordData, setPasswordData] = useState({
-    savedPwd: { url: "", id: "", cat: "", pwd: "" },
-  });
 
   const settingsHandler = () => {
     setModalOpen(!modalOpen);
@@ -25,8 +23,11 @@ export default function Generator() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setPasswordData({
-      savedPwd: {
+    let passwords = context.state.passwords;
+    let key = `pwd${Object.keys(passwords).length + 1}`;
+    context.setAllPasswords({
+      ...passwords,
+      [key]: {
         url: e.target.url.value,
         id: e.target.username.value,
         cat: e.target.category.value,
@@ -34,10 +35,6 @@ export default function Generator() {
       },
     });
   };
-
-  useEffect(() => {
-    localStorage.setItem("passwordData", JSON.stringify(passwordData));
-  }, [passwordData]);
 
   return (
     <div>

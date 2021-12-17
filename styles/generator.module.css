@@ -12,7 +12,7 @@
   display: block;
   color: white;
   text-transform: uppercase;
-  font-family: Now;
+  font-family: Now, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   letter-spacing: 0.4rem;
   padding: 2rem 0 1rem 0;
 }

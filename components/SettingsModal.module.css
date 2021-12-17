@@ -17,7 +17,7 @@
 
 .modal_header {
   padding: 1rem 2rem;
-  font-family: Now;
+  font-family: Now, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.4rem;
 }

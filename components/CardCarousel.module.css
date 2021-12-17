@@ -27,7 +27,7 @@
   text-transform: uppercase;
   letter-spacing: 0.3rem;
   color: white;
-  font-family: Now;
+  font-family: Now, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .card_body div span {
