@@ -17,15 +17,14 @@
 
 .modal_header {
   padding: 1rem 2rem;
-  font-family: Now, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Now, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.4rem;
 }
 
 .modal_header i {
-    cursor: pointer;
+  cursor: pointer;
 }
-
 
 .modal_header h4 {
   text-align: center;
@@ -54,4 +53,22 @@
 .modal_number_field label,
 .modal_symbol_field label {
   margin-left: 1rem;
+}
+
+.modal_body p{
+  color: white;
+  margin : 0;
+  padding-bottom : 3rem 
+}
+
+.modal_body button{
+  padding : 0.4rem;
+  margin : 0.4rem;
+  max-width : 200px;
+}
+
+.btn_wrapper{
+  display : flex; 
+  align-items : center;
+  justify-content: center;
 }

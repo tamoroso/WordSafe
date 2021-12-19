@@ -5,19 +5,21 @@ import Layout, { siteTitle } from "../components/layout";
 import Head from "next/head";
 import DropDownMenu from "../components/DropDownMenu";
 import PasswordGenerator from "../components/PasswordGenerator";
-import { useContext, useEffect, useState } from "react";
-import SettingsModal from "../components/SettingsModal";
+import { useContext, useState } from "react";
+import Modal from "../components/Modals/Modal";
 import { AppContext } from "../context/AppContext";
 
 export default function Generator() {
   const context = useContext(AppContext);
-  const [modalOpen, setModalOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(true);
   const [length, setLength] = useState(16);
   const [includeNumbers, setIncludeNumbers] = useState(true);
   const [includeSymbols, setIncludeSymbols] = useState(true);
   const [password, setPassword] = useState("");
+  const [modalType, setModalType] = useState("save");
 
   const settingsHandler = () => {
+    setModalType("settings");
     setModalOpen(!modalOpen);
   };
 
@@ -25,6 +27,8 @@ export default function Generator() {
     e.preventDefault();
     let passwords = context.state.passwords;
     let key = `pwd${Object.keys(passwords).length + 1}`;
+    setModalType("save");
+    setModalOpen(!modalOpen);
     context.setAllPasswords({
       ...passwords,
       [key]: {
@@ -44,7 +48,8 @@ export default function Generator() {
         </Head>
         <HomeBackground />
         <main className={styles.main}>
-          <SettingsModal
+          <Modal
+            modalType={modalType}
             modalOpen={modalOpen}
             settingsHandler={settingsHandler}
             length={length}
@@ -67,6 +72,7 @@ export default function Generator() {
                 type="url"
                 name="url"
                 placeholder="ex : https://yourWebsite.com"
+                required
               ></input>
             </div>
             <div className={styles.cat_label}>
@@ -83,6 +89,7 @@ export default function Generator() {
                 type="text"
                 name="username"
                 placeholder="ex : xX_WordSafe_Master_Xx"
+                required
               ></input>
             </div>
             <div className={styles.pwd_label}>

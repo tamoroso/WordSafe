@@ -31,6 +31,7 @@ export default function PasswordGenerator(props) {
         placeholder="Generate your password by clicking the cycle icon"
         value={props.password}
         readOnly={true}
+        required
       />
       <div className={styles.icons}>
         <i onClick={generatePasswordHandler}>

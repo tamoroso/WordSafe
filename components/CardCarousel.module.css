@@ -34,9 +34,25 @@
   color: hsla(0, 0%, 100%, 0.5);
 }
 
+.card_body div input {
+  background: none;
+  border: none;
+  color: hsla(0, 0%, 100%, 0.5);
+  text-align: center;
+}
+
+.card_body div input:focus {
+  outline: none;
+}
+
 .logo {
   height: 50px !important;
   width: 50px !important;
   border-radius: 50%;
   overflow: hidden;
+}
+
+.icon {
+  cursor: pointer;
+  padding: 0.5rem;
 }

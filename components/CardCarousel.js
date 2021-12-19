@@ -3,6 +3,8 @@ import styles from "./CardCarousel.module.css";
 import _ from "lodash";
 import Image from "next/image";
 import { extractDomain } from "../lib/dataProcessing";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCopy, faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 
 function determineClasses(indexes, cardIndex) {
   if (indexes.currentIndex === cardIndex) {
@@ -22,6 +24,7 @@ const CardCarousel = (props) => {
     nextIndex: 1,
   });
   const carousel = useRef();
+
 
   const handleCardTransition = useCallback(
     (event) => {
@@ -94,16 +97,46 @@ const CardCarousel = (props) => {
                 />
               </div>
               <div className={styles.card_url_field}>
-                <strong>url</strong>
+                <strong>
+                  url
+                  <a
+                    className={styles.icon}
+                    href={props.data[key].url}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <FontAwesomeIcon icon={faExternalLinkAlt} size="lg" />
+                  </a>
+                </strong>
                 <span>{props.data[key].url}</span>
               </div>
               <div className={styles.card_id_field}>
-                <strong>Username</strong>
-                <span>{props.data[key].id}</span>
+                <strong>
+                  Username
+                  <i className={styles.icon}>
+                    <FontAwesomeIcon icon={faCopy} size="lg" />
+                  </i>
+                </strong>
+                <input
+                  type="text"
+                  name="username"
+                  value={props.data[key].id}
+                  readOnly
+                />
               </div>
               <div className={styles.card_pwd_field}>
-                <strong>Password</strong>
-                <span>{props.data[key].pwd}</span>
+                <strong>
+                  Password
+                  <i className={styles.icon}>
+                    <FontAwesomeIcon icon={faCopy} size="lg" />
+                  </i>
+                </strong>
+                <input
+                  type="password"
+                  name="password"
+                  value={props.data[key].pwd}
+                  readOnly
+                />
               </div>
             </div>
           </li>
