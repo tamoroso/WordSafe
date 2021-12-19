@@ -8,17 +8,17 @@ export default function PasswordContext({ children }) {
   const [allPasswords, setAllPasswords] = useState(passwords);
 
   useEffect(() => {
-      const storedData = localStorage.getItem("passwords")
-      const storedObject = JSON.parse(storedData)
+    const storedData = localStorage.getItem("passwords");
+    const storedObject = JSON.parse(storedData);
 
-      if (storedData){
-          setAllPasswords(storedObject)
-      }
-  },[])
+    if (storedData) {
+      setAllPasswords(storedObject);
+    }
+  }, []);
 
-  useEffect (()=>{
-      localStorage.setItem("passwords", JSON.stringify(allPasswords))
-  }, [allPasswords])
+  useEffect(() => {
+    localStorage.setItem("passwords", JSON.stringify(allPasswords));
+  }, [allPasswords]);
 
   return (
     <AppContext.Provider
@@ -26,7 +26,7 @@ export default function PasswordContext({ children }) {
         state: {
           passwords: allPasswords,
         },
-        setAllPasswords : setAllPasswords
+        setAllPasswords: setAllPasswords,
       }}
     >
       {console.log(allPasswords)}

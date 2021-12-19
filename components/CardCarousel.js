@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useState, useRef } from "react";
 import styles from "./CardCarousel.module.css";
-import { debounce } from "lodash";
+import _ from "lodash";
+import Image from "next/image";
+import { extractDomain } from "../lib/dataProcessing";
 
 function determineClasses(indexes, cardIndex) {
   if (indexes.currentIndex === cardIndex) {
@@ -81,6 +83,16 @@ const CardCarousel = (props) => {
             className={`card ${determineClasses(indexes, index)} glass`}
           >
             <div className={styles.card_body}>
+              <div className={styles.logo}>
+                <Image
+                  src={`https://logo.clearbit.com/${extractDomain(
+                    props.data[key].url
+                  )}`}
+                  alt="problème"
+                  width="100px"
+                  height="100px"
+                />
+              </div>
               <div className={styles.card_url_field}>
                 <strong>url</strong>
                 <span>{props.data[key].url}</span>
