@@ -35,4 +35,40 @@ export const passwords = {
     cat: "Social Network",
     pwd: "TF9*=c$=h+5UmFv@wI3827YBSorWVL",
   },
+  pwd7: {
+    url: "https://www.pinterest.com",
+    id: "DesignMaster",
+    cat: "Social Network",
+    pwd: "TF9*=c$=h+5UmFv@wI3827YBSorWVL",
+  },
+  pwd8: {
+    url: "https://www.linkedin.com",
+    id: "Frontend Dev",
+    cat: "Social Network",
+    pwd: "TF9*=c$=h+5UmFv@wI3827YBSorWVL",
+  },
+  pwd9: {
+    url: "https://www.carrefour.com",
+    id: "Buy a pizza",
+    cat: "E-commerce",
+    pwd: "TF9*=c$=h+5UmFv@wI3827YBSorWVL",
+  },
+  pwd10: {
+    url: "https://www.e.leclerc/",
+    id: "More Pizza",
+    cat: "E-commerce",
+    pwd: "TF9*=c$=h+5UmFv@wI3827YBSorWVL",
+  },
+  pwd11: {
+    url: "https://www.blizzard.com/fr-fr/",
+    id: "Not Warzone again",
+    cat: "Gaming",
+    pwd: "&dXm5nYCU#CbENOR=+TSsVIl2L%ikq",
+  },
+  pwd12: {
+    url: "https://www.leagueoflegends.com/fr-fr/",
+    id: "Hundred of hours losts",
+    cat: "Gaming",
+    pwd: "&dXm5nYCU#CbENOR=+TSsVIl2L%ikq",
+  },
 };

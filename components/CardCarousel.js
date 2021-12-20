@@ -25,7 +25,6 @@ const CardCarousel = (props) => {
   });
   const carousel = useRef();
 
-
   const handleCardTransition = useCallback(
     (event) => {
       if (
@@ -91,9 +90,9 @@ const CardCarousel = (props) => {
                   src={`https://logo.clearbit.com/${extractDomain(
                     props.data[key].url
                   )}`}
-                  alt="problème"
                   width="100px"
                   height="100px"
+                  alt = "logo"
                 />
               </div>
               <div className={styles.card_url_field}>

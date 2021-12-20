@@ -29,7 +29,6 @@ export default function PasswordContext({ children }) {
         setAllPasswords: setAllPasswords,
       }}
     >
-      {console.log(allPasswords)}
       {children}
     </AppContext.Provider>
   );
