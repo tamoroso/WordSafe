@@ -7,6 +7,12 @@
   align-items: center;
 }
 
+@media (max-width : 600px){
+  .category_header{
+    min-width : 300px
+  }
+}
+
 .card_body {
   padding: 1rem 2rem;
   display: flex;

@@ -8,6 +8,18 @@
   align-items: center;
 }
 
+@media (max-width: 600px) {
+  .card {
+    margin: 2rem;
+    max-width: 500px;
+  }
+
+  .card p {
+    margin : 0 0 2rem 0 !important;
+
+  }
+}
+
 .card {
   display: flex;
   flex-direction: column;
@@ -18,13 +30,12 @@
   color: white;
   text-decoration: none;
   max-width: 600px;
-  /* min-height: 600px; */
 }
 
 .card h1 {
   margin: 1rem 0 2rem 0;
   font-size: 2rem;
-  font-family: "Now", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Now", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   letter-spacing: 0.5rem;
 }
 

@@ -28,23 +28,23 @@ export default function PasswordGenerator(props) {
         type="password"
         name="password"
         id="password"
-        placeholder="Generate your password by clicking the cycle icon"
+        placeholder=""
         value={props.password}
         readOnly={true}
         required
       />
       <div className={styles.icons}>
         <i onClick={generatePasswordHandler}>
-          <FontAwesomeIcon icon={faSyncAlt} size="lg" />
+          <FontAwesomeIcon icon={faSyncAlt} size="s" />
         </i>
         <i onClick={passwordVisibility}>
-          <FontAwesomeIcon icon={faEye} size="lg" />
+          <FontAwesomeIcon icon={faEye} size="s" />
         </i>
         <i onClick={passwordCopy}>
-          <FontAwesomeIcon icon={faCopy} size="lg" />
+          <FontAwesomeIcon icon={faCopy} size="s" />
         </i>
         <i onClick={props.settingsHandler}>
-          <FontAwesomeIcon icon={faEllipsisH} size="lg" />
+          <FontAwesomeIcon icon={faEllipsisH} size="s" />
         </i>
       </div>
     </div>

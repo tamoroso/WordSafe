@@ -11,12 +11,12 @@ import { AppContext } from "../context/AppContext";
 
 export default function Generator() {
   const context = useContext(AppContext);
-  const [modalOpen, setModalOpen] = useState(true);
+  const [modalOpen, setModalOpen] = useState(false);
   const [length, setLength] = useState(16);
   const [includeNumbers, setIncludeNumbers] = useState(true);
   const [includeSymbols, setIncludeSymbols] = useState(true);
   const [password, setPassword] = useState("");
-  const [modalType, setModalType] = useState("save");
+  const [modalType, setModalType] = useState("");
 
   const settingsHandler = () => {
     setModalType("settings");
@@ -47,7 +47,7 @@ export default function Generator() {
           <title>{siteTitle}</title>
         </Head>
         <HomeBackground />
-        <main className={styles.main}>
+        <div className={styles.main}>
           <Modal
             modalType={modalType}
             modalOpen={modalOpen}
@@ -112,7 +112,7 @@ export default function Generator() {
               </button>
             </div>
           </form>
-        </main>
+        </div>
       </Layout>
     </div>
   );

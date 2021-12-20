@@ -18,7 +18,7 @@ export default function Safe() {
         <Head>
           <title>{siteTitle}</title>
         </Head>
-        <main>
+        <div>
           <HomeBackground />
           <NavBar />
           <section className={styles.container}>
@@ -31,7 +31,7 @@ export default function Safe() {
               </div>
             ))}
           </section>
-        </main>
+        </div>
       </Layout>
     </div>
   );

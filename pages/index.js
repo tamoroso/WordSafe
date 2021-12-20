@@ -14,7 +14,7 @@ export default function Home() {
         <Head>
           <title>WordSafe - Keep your words safe</title>
         </Head>
-        <main className={styles.main}>
+        <div className={styles.main}>
           <HomeBackground />
           <div className={`${styles.card} glass`}>
             <Image
@@ -40,7 +40,7 @@ export default function Home() {
               </a>
             </Link>
           </div>
-        </main>
+        </div>
       </Layout>
     </div>
   );
