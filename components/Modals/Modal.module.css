@@ -15,6 +15,12 @@
   max-width: 500px;
 }
 
+@media (max-width: 600px) {
+  .modal_content {
+    max-width: 300px;
+  }
+}
+
 .modal_header {
   padding: 1rem 2rem;
   font-family: Now, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -55,20 +61,20 @@
   margin-left: 1rem;
 }
 
-.modal_body p{
+.modal_body p {
   color: white;
-  margin : 0;
-  padding-bottom : 3rem 
+  margin: 0;
+  padding-bottom: 3rem;
 }
 
-.modal_body button{
-  padding : 0.4rem;
-  margin : 0.4rem;
-  max-width : 200px;
+.modal_body button {
+  padding: 0.4rem;
+  margin: 0.4rem;
+  max-width: 200px;
 }
 
-.btn_wrapper{
-  display : flex; 
-  align-items : center;
+.btn_wrapper {
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
