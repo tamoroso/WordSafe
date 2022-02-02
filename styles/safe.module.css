@@ -1,3 +1,14 @@
+.main {
+  min-height: 100vh;
+  background: #151c35;
+  background-image: url("/assets/bg-2.svg") no-repeat;
+  background-image: url("/assets/bg-2.svg"),
+    linear-gradient(-220deg, #151c35, #00412b);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
 .container {
   display: flex;
   flex-direction: row;
@@ -7,9 +18,6 @@
   overflow-x: scroll;
 }
 
-.stack{
-  margin : 0 2rem;
+.stack {
+  margin: 0 2rem;
 }
-
-
-

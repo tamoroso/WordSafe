@@ -5,7 +5,11 @@ body {
   font-family: Roboto, sans-serif;
   width : 100vw;
   overflow: hidden;
+  background-color: linear-gradient(-220deg, #151c35, #00412b);
+
 }
+
+
 
 a {
   color: inherit;

@@ -1,7 +1,19 @@
+.main {
+  min-height: 100vh;
+  background: #151c35;
+  background-image: url("/assets/bg-2.svg") no-repeat;
+  background-image: url("/assets/bg-2.svg"),
+    linear-gradient(-220deg, #151c35, #00412b);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding-top: 1rem;
+}
+
 .generator_container {
   max-width: 80vw;
   /* height: 50vh; */
-  margin: auto;
+  margin: 2rem auto;
   padding: 2rem 3rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);

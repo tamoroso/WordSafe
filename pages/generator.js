@@ -1,6 +1,5 @@
 import NavBar from "../components/NavBar";
 import styles from "../styles/generator.module.css";
-import HomeBackground from "../components/HomeBackground";
 import Layout, { siteTitle } from "../components/layout";
 import Head from "next/head";
 import DropDownMenu from "../components/DropDownMenu";
@@ -46,7 +45,6 @@ export default function Generator() {
         <Head>
           <title>{siteTitle}</title>
         </Head>
-        <HomeBackground />
         <div className={styles.main}>
           <Modal
             modalType={modalType}

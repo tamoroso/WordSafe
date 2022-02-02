@@ -1,8 +1,24 @@
 .glass {
-  background: rgba(91, 116, 138, 0.3);
   border: solid 1px rgba(230, 230, 230, 0.3);
-  backdrop-filter: blur(30px);
   border-radius: 30px;
+  z-index: 1;
+  background: inherit;
+  position: relative;
+  overflow: hidden;
+}
+
+.glass:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset 0 0 2000px rgba(91, 116, 138, .5);
+  filter: blur(30px);
+  background: inherit;
+  margin: -30px;
 }
 
 .gradient-btn {
@@ -15,6 +31,7 @@
   font-size: 0.9rem;
   cursor: pointer;
   border: none;
+  padding : 1rem;
 }
 
 /* CARD CAROUSEL */
@@ -42,16 +59,14 @@
   align-items: center;
 }
 
-@media (max-width : 600px){
+@media (max-width: 600px) {
   .card {
-    min-width : 300px
+    min-width: 300px;
   }
-  .card_carousel{
-    margin : 60px auto
+  .card_carousel {
+    margin: 60px auto;
   }
 }
-
-
 
 .card.active {
   opacity: 1;

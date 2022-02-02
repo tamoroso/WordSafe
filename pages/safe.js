@@ -18,14 +18,16 @@ export default function Safe() {
         <Head>
           <title>{siteTitle}</title>
         </Head>
-        <div>
-          <HomeBackground />
+        <div className={styles.main}>
+          {/* <HomeBackground /> */}
           <NavBar />
           <section className={styles.container}>
             {categories.map((cat, i) => (
               <div className={styles.stack} key={i}>
                 <CardCarousel
-                  header={getUniqueCat(filterObject(context.state.passwords, cat))}
+                  header={getUniqueCat(
+                    filterObject(context.state.passwords, cat)
+                  )}
                   data={filterObject(context.state.passwords, cat)}
                 />
               </div>
